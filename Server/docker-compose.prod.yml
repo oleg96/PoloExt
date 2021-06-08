@@ -1,0 +1,35 @@
+version: '3'
+networks:
+  server:
+    driver: bridge
+services:
+  server:
+    build: 
+      context: .
+      dockerfile: Dockerfile.prod
+    image: 'poloextserver-prod'
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    networks:
+      - server
+    volumes:
+      - ./keys:/keys
+      - ~/Documents/nicehash2fa/dist:/root/Documents/nicehash2fa/dist
+  fix-mongodb-permissions:
+    image: 'bitnami/mongodb:latest'
+    user: root
+    command: chown -R 1001:1001 /bitnami
+    volumes:
+      - "./data:/bitnami"
+  mongodb:
+    image: 'bitnami/mongodb:latest'
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - ./data:/bitnami:rw
+    depends_on:
+      - fix-mongodb-permissions
+    networks:
+      - server

@@ -1,0 +1,55 @@
+@import '../../stylesheets/variables.scss';
+
+.snackbar {
+  position: fixed;
+  bottom: 0px;
+  padding-left: 10px;
+  height: 32px;
+  background: $blue;
+  color: $white;
+  animation-duration: 0.25s;
+  animation-name: popup;
+  z-index: 3;
+  font-size: 13px;
+}
+
+.snackbar--invisible {
+  position: fixed;
+  bottom: -32px;
+  padding-left: 10px;
+  height: 32px;
+  background: $blue;
+  color: $white;
+  animation-duration: 0.25s;
+  animation-name: popdown;
+  opacity: 0;
+  z-index: 3;
+  font-size: 13px;
+}
+
+@keyframes popup {
+  from {
+    bottom: -32px;
+  }
+  to {
+    bottom: 0px;
+  }
+}
+
+@keyframes popdown {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: -32px;
+  }
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

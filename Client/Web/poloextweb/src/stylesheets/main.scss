@@ -1,0 +1,179 @@
+@import './variables.scss';
+
+.invisible {
+  display: none;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(-90deg, $lightBlue, $darkBlue);
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+  padding: 20px;
+}
+
+.emptyBlock {
+  height: 50px;
+  width: 100%;
+}
+
+.selfCentered {
+  align-self: center;
+
+  &__padding {
+    padding-top: 10px;
+  }
+}
+
+.fullWidth {
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__centered {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+
+  &__wrap {
+    flex-wrap: wrap;
+  }
+
+  &__end {
+    justify-content: flex-end;
+  }
+}
+
+.halfWidth {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  &__column {
+    flex-direction: column;
+  }
+
+  @media (min-width: 800px) {
+    width: 50%;
+  }
+
+  @media (max-width: 799px) {
+    width: 100%;
+  }
+}
+
+.block {
+  display: flex;
+  background: $white;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 10px;
+  align-items: flex-start;
+  border-radius: 5px;
+  width: calc(100% - 40px);
+  animation-duration: 0.5s;
+  animation-name: blockDisplay;
+  max-width: 900px;
+  margin: 10px;
+  box-shadow: 0px 0px 8px 0 $boxShadowGray;
+
+  &__no-padding {
+    padding: 0px 10px;
+  }
+}
+
+@keyframes blockDisplay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+form {
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+body {
+  margin: 0px;
+}
+
+.ReactTable {
+  width: 100%;
+  background: $white;
+  border: none;
+  overflow-y: auto;
+}
+
+.ReactTable .-pagination .-btn {
+  background: $white;
+  color: $black;
+  border: 0.5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 $boxShadowGray;
+}
+
+.ReactTable .-pagination .-btn:not([disabled]):hover {
+  color: $white;
+  background: $blue;
+}
+
+.ReactTable .rt-thead .rt-th.-sort-desc, .ReactTable .rt-thead .rt-td.-sort-desc {
+  box-shadow: inset 0 -3px 0 0 $blue;
+}
+
+.ReactTable .rt-thead .rt-th.-sort-asc, .ReactTable .rt-thead .rt-td.-sort-asc {
+  box-shadow: inset 0 3px 0 0 $blue;
+}
+
+.highcharts-container, .highcharts-container svg { width: 100% !important; }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $whiteDisabled;
+  opacity: 1; /* Firefox */
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+html {
+  background: $whiteGrayed;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+}

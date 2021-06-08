@@ -1,0 +1,24 @@
+@import '../../stylesheets/variables.scss';
+
+.automationEvents {
+
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: $transparentGray;
+  animation-duration: 0.25s;
+  animation-name: blockDisplay;
+  z-index: 4;
+  padding-top: 50px;
+
+  &__content {
+    max-height: 510px;
+    background: $whiteGrayed;
+  }
+}

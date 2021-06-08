@@ -1,0 +1,206 @@
+@import '../../stylesheets/variables.scss';
+
+.button {
+
+  &__primary {
+    display: flex;
+    align-items: center;  
+    height: 32px;
+    border: 0.5px;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    box-shadow: 0 1px 4px 0 $boxShadowGray;
+
+    &__disabled--true {
+      background: $buttonBlueDisabled;
+      color: $whiteDisabled;
+
+      &:focus {
+        outline: 1px solid $buttonBlueDisabled;
+        outline-offset: 0px;
+      }
+    }
+
+    &__disabled--false {
+      background: $white;
+      color: $black;
+
+      &:focus {
+        outline: 1px solid 0;
+        outline-offset: 0px;
+      }
+
+      &:hover {
+        color: $white;
+        background: $blue;
+      }
+
+      &:active {
+        color: $white;
+        background: $blue;
+      }
+    }
+  }
+
+  &__warning {
+    display: flex;
+    align-items: center;  
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    box-shadow: 0 1px 4px 0 $boxShadowGray;
+
+    &__disabled--true {
+      background: $orangeDisabled;
+      color: $whiteDisabled;
+
+      &:focus {
+        outline: 1px solid $orangeDisabled;
+        outline-offset: 0px;
+      }
+    }
+
+    &__disabled--false {
+      background: $orange;
+      color: $white;
+
+      &:focus {
+        outline: 1px solid $orange;
+        outline-offset: 0px;
+      }
+
+      &:hover {
+        background: $orangeHover;
+      }
+
+      &:active {
+        background: $orangeHover;
+      }
+    }
+  }
+
+  &__danger {
+    display: flex;
+    align-items: center;  
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    box-shadow: 0 1px 4px 0 $boxShadowGray;
+
+    &__disabled--true {
+      background: $darkRedDisabled;
+      color: $whiteDisabled;
+
+      &:focus {
+        outline: 1px solid $darkRedDisabled;
+        outline-offset: 0px;
+      }
+    }
+
+    &__disabled--false {
+      background: $darkRed;
+      color: $white;
+
+      &:focus {
+        outline: 1px solid $darkRed;
+        outline-offset: 0px;
+      }
+
+      &:hover {
+        background: $darkRedHover;
+      }
+
+      &:active {
+        background: $darkRedHover;
+      }
+    }
+
+    &--small {
+      height: 24px;
+      margin: 0px;
+
+      &__disabled--true {
+        background: $darkRedDisabled;
+        color: $whiteDisabled;
+
+        &:focus {
+          outline: 1px solid $darkRedDisabled;
+          outline-offset: 0px;
+        }
+      }
+  
+      &__disabled--false {
+        background: $darkRed;
+        color: $white;
+
+        &:focus {
+          outline: 1px solid $darkRed;
+          outline-offset: 0px;
+        }
+
+        &:hover {
+          background: $darkRedHover;
+        }
+  
+        &:active {
+          background: $darkRedHover;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    height: 50px;
+    width: 150px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+    border: none;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+
+    &__selected--true {
+      background: $white;
+      color: $blue;
+      font-weight: bold;
+      border-bottom-color: $blue;
+      border-bottom-style: solid;
+
+      &:focus {
+        outline: 0px solid $lightBlue;
+        outline-offset: 0px;
+      }
+    }
+
+    &__selected--false {
+      background: $white;
+
+      &:focus {
+        outline: 0px solid $lightBlue;
+        outline-offset: 0px;
+      }
+
+      &:hover {
+        border-bottom-color: $blue;
+        border-bottom-style: solid;
+      }
+    }
+  }
+}

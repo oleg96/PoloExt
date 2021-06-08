@@ -1,0 +1,16 @@
+version: '3'
+networks:
+  client:
+    driver: bridge
+services:
+  client:
+    build: 
+      context: .
+      dockerfile: Dockerfile.prod
+    image: 'poloextweb-prod'
+    ports:
+      - "8080:8080"
+    networks:
+      - client
+    volumes:
+      - ./keys:/keys
